@@ -17,7 +17,7 @@
 
 - name: Copy the war file
   copy:
-    src: /var/lib/jenkins/hello-world-war-1.0.0.war
+    src: /var/lib/jenkins/workspace/demo/target/hello-world-war-1.0.0.war
     dest: /usr/local/apache-tomcat-10.0.27/webapps/
     remote_src: yes
 
