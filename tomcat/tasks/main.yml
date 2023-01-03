@@ -1,6 +1,9 @@
 ---
 # tasks file for tomcat
 
+- name: install pip3
+  apt: name=python3-pip state=present 
+  
 - name: Install lxml
   pip: name=lxml
 
