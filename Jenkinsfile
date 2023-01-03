@@ -12,5 +12,10 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
+        stage('ansible deploy')
+        steps{
+            ansiblePlaybook credentialsId: 'ansible_demo', disableHostKeyChecking: true, installation: 'ansible', inventory: 'dev.inv', playbook: 'demo.yml'
+       }
     }
+}
 }
