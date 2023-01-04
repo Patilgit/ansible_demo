@@ -4,8 +4,8 @@ pipeline {
         password = "darshan"
     }
     
-    /*stages{
-       stage('GetCode'){
+     stages{
+       /* stage('GetCode'){
             steps{
                 git branch: 'main', url: 'https://github.com/Patilgit/ansible_demo.git'
             }
@@ -25,6 +25,7 @@ pipeline {
                 sh '''
                 ansible-vault encrypt_string ${password} --vault-id 'pass' 
                 ''' 
-                  
+                  }
 }
+     }
 }
