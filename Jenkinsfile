@@ -23,7 +23,7 @@ pipeline {
         stage('vault'){
             steps{
                 sh '''
-                ansible-vault encrypt_string ${password} --vault-id 'pass' 
+                ansible-vault encrypt_string ${password} --name 'pass' 
                 ''' 
                   }
 }
