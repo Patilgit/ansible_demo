@@ -5,7 +5,7 @@ pipeline {
     }
     
      stages{
-       /* stage('GetCode'){
+ /* stage('GetCode'){
             steps{
                 git branch: 'main', url: 'https://github.com/Patilgit/ansible_demo.git'
             }
@@ -23,7 +23,7 @@ pipeline {
         stage('vault'){
             steps{
                 script{
-                ansible-vault encrypt_string ${password} --name 'pass' --vault-password-file /var/lib/jenkins/workspace/demo/.vault_password.txt
+                ansible-vault encrypt_string ${password} --name 'pass' --vault-password-file '/var/lib/jenkins/workspace/demo/.vault_password.txt'
                 }
                   }
 }
