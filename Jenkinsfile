@@ -23,7 +23,7 @@ pipeline {
         stage('vault'){
             steps{
                 sh '''
-                ansible-vault encrypt_string ${password} --name 'pass' 
+                ansible-vault encrypt_string ${password} --name 'pass' --vault-password-file /var/lib/jenkins/workspace/demo/.vault_password.txt
                 ''' 
                   }
 }
