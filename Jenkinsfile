@@ -1,7 +1,10 @@
 pipeline {
     agent any
+    environment { 
+        password = "darshan"
+    }
     
-    stages{
+    /*stages{
        stage('GetCode'){
             steps{
                 git branch: 'main', url: 'https://github.com/Patilgit/ansible_demo.git'
@@ -16,6 +19,12 @@ pipeline {
         steps{
             ansiblePlaybook credentialsId: 'ansible_demo', disableHostKeyChecking: true, installation: 'ansible', inventory: 'dev.inv', playbook: 'demo.yml'
        }
-    }
+    }*/
+        stage('vault'){
+            steps{
+                sh '''
+                ansible-vault encrypt_string ${password} --vault-id 'pass' 
+                ''' 
+                  
 }
 }
