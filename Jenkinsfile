@@ -25,7 +25,7 @@ pipeline {
             steps{
                 script{
                     sh 'ansible-vault encrypt_string ${password} --vault-password-file /var/lib/jenkins/workspace/demo/.vault_password.txt'
-                    sh 'ansible-vault encrypt_string ${dpassword} --vault-password-file /var/lib/jenkins/workspace/demo/.vault_password.txt' 
+                    sh 'ansible-vault decrypt_string ${dpassword} --vault-password-file /var/lib/jenkins/workspace/demo/.vault_password.txt' 
                 }
             }
         }
