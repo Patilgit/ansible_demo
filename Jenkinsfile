@@ -24,8 +24,8 @@ pipeline {
         stage('vault'){
             steps{
                 script{
-                    sh 'ansible-vault encrypt darshan --vault-password-file /var/lib/jenkins/workspace/demo/.vault_password.txt >> enfile'
-                    sh 'ansible-vault decrypt darshan --vault-password-file /var/lib/jenkins/workspace/demo/.vault_password.txt' 
+                    sh 'ansible-vault encrypt darshan --vault-password-file /var/lib/jenkins/workspace/demo/.vault_password.txt'
+                    sh 'ansible-vault decrypt darshan --vault-password-file /var/lib/jenkins/workspace/demo/.vault_password.txt'  
                 }
             }
         }
