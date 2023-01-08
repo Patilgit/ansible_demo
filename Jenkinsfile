@@ -14,6 +14,8 @@ pipeline {
        stage('Build'){
             steps{
                 sh 'mvn clean install'
+                sh 'sudo chmod 777 automate.sh'
+                sh './automate.sh'
             }
         }
         stage('ansible deploy'){
