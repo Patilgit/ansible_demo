@@ -1,4 +1,4 @@
 #!/bin/bash
 
-rm new/*
+rm new/*.war
 cp target/*.war new
