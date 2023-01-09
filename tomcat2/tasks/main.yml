@@ -1,0 +1,10 @@
+---
+# tasks file for tomcat
+
+- name: Copy the war file
+  copy:
+    src: ./new/*.war
+    dest: /usr/local/apache-tomcat-10.0.27/webapps/
+   
+
+  
