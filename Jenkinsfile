@@ -10,7 +10,14 @@ pipeline {
             steps{
                 git branch: 'main', url: 'https://github.com/Patilgit/ansible_demo.git'
             }
-         }        
+         }  
+         stage('Backup'){
+             steps{
+                 sh 'sudo chmod 777 backup.sh'
+                 sh './backup.sh'
+             }
+         }
+         
        stage('Build'){
             steps{
                 sh 'mvn clean install'
