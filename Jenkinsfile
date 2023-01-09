@@ -27,7 +27,7 @@ pipeline {
         }
         stage('ansible deploy'){
         steps{
-            sh 'ansiblePlaybook credentialsId: 'ansible_demo', disableHostKeyChecking: true, installation: 'ansible', inventory: 'dev.inv', playbook: 'demo.yml''
+            ansiblePlaybook credentialsId: 'ansible_demo', disableHostKeyChecking: true, installation: 'ansible', inventory: 'dev.inv', playbook: 'demo.yml'
        }
     }
         stage('vault'){
