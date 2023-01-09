@@ -14,7 +14,9 @@ pipeline {
        stage('Build'){
             steps{
                 sh 'mvn clean install'
+                sh 'cd ..'
                 sh './automate.sh'
+                sh 'cd demo'
             }
         }
         stage('ansible deploy'){
