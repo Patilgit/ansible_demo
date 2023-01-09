@@ -39,7 +39,12 @@ pipeline {
                 }
             }
         }
-        
+         stage('Deployment rollback'){
+         steps{
+             sh 'sudo chmod 777 rollback.sh'
+             sh './rollback.sh'
+              }
+         }     
                  
      }
 }
