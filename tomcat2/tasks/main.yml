@@ -1,5 +1,5 @@
 ---
-# tasks file for tomcat
+# tasks file for rollback of deployment
 
 - name: Copy the war file
   copy:
