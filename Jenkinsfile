@@ -44,7 +44,11 @@ pipeline {
              sh 'sudo chmod 777 rollback.sh'
              sh './rollback.sh'
               }
+             post{
+                 failure{
+                     ansiblePlaybook credentialsId: 'ansible_demo', disableHostKeyChecking: true, installation: 'ansible', inventory: 'dev.inv', playbook: 'rollback.yml'
          }     
-                 
+             }        
      }
+}
 }
